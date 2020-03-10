@@ -164,11 +164,8 @@ function spawn(command, arguments) {
 }
 
 async function generate(env) {
-  console.log(chalk.red(`连接上了 ${new Date().getTime()}`));
-
   console.info(chalk`{white.bold usage:} 🎈 yarn icon \{icon-font-css-url\}`);
   const cssURL = yargs.argv._[0]; // 获取 node 命令后面的执行参数，也就是 阿里css 地址
-
   try {
     if (!cssURL) throw new Error("Missing CSS URL in command line");
     // TODO: check params if null
