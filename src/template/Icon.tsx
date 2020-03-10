@@ -21,39 +21,11 @@ export default class Component extends React.PureComponent<Props> {
 
   render() {
     const { type, text, textPosition, className, ...restProps } = this.props;
-    if (text) {
-      if (textPosition === "left") {
-        return (
-          <div
-            className={`iconfont-with-text-on-left ${
-              className ? className : ""
-            }`}
-            {...restProps}
-          >
-            <span>{text}</span>
-            <i className={`iconfont ${type}`} {...restProps} />
-          </div>
-        );
-      } else {
-        return (
-          <div
-            className={`iconfont-with-text-on-right ${
-              className ? className : ""
-            }`}
-            {...restProps}
-          >
-            <i className={`iconfont ${type}`} {...restProps} />
-            <span>{text}</span>
-          </div>
-        );
-      }
-    } else {
-      return (
-        <i
-          className={`iconfont ${type} ${className ? className : ""}`}
-          {...restProps}
-        />
-      );
-    }
+    return (
+      <i
+        className={`iconfont ${type} ${className ? className : ""}`}
+        {...restProps}
+      />
+    );
   }
 }
